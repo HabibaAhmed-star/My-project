@@ -1,0 +1,426 @@
+:root {
+            --bg-color: #f7f5f0;
+            --text-primary: #1e1e1e;
+            --accent-teal: #2c7a7b;
+            --accent-gold: #d69e2e;
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- 1. Navigation Bar --- */
+        .site-header {
+            width: 100%;
+            padding: 1.5rem 3rem;
+            background-color: var(--bg-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1440px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-links, .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent-teal);
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--accent-teal);
+            border-radius: 2px;
+        }
+
+        .nav-brand a {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            font-weight: 100;
+            color: var(--accent-teal);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        .nav-brand img {
+            height: 40px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-brand span {
+            color: var(--accent-gold);
+        }
+
+        .nav-icons {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-left: 1rem;
+        }
+
+        .icon-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-primary);
+            transition: transform 0.2s ease, color 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon-btn:hover {
+            color: var(--accent-teal);
+            transform: translateY(-2px);
+        }
+
+        /* --- 2. Hero Section with Video Background --- */
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: calc(100vh - 90px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-color: var(--bg-color);
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: cover;
+            z-index: 1;
+            opacity: 0.85;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-family: var(--font-serif);
+            font-size: clamp(4rem, 10vw, 8.5rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            color: #2b2b2b;
+            user-select: none;
+        }
+
+        .hero-title span {
+            font-style: italic;
+            color: #4a4a4a;
+        }
+
+        
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* زر الـ More */
+.dropdown-btn {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.dropdown-btn:hover {
+    color: var(--accent-teal);
+}
+
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 6px;
+    padding: 8px 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 110;
+}
+
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    color: #2c2c2c;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f7f5f0;
+    color: #2c7a7b;
+}
+
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+.market-header-section {
+    background-color: #0e869c; /* لون الخلفية التيفاني */
+    position: relative;
+    padding-top: 80px;
+    width: 100%;
+}
+
+.market-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px 70px 20px;
+    text-align: center;
+}
+
+.market-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.market-subtitle {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 17px;
+    color: #ffffff;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+}
+
+/* تنسيق التمويج السفلي */
+.market-wave {
+    width: 100%;
+    line-height: 0;
+    margin: 0;
+}
+
+.market-wave svg {
+    display: block;
+    width: 100%;
+    height: 80px;
+}
+.store-section {
+    background-color:#f7f5f0; /* الخلفية بيضاء بالكامل */
+    padding: 100px 20px;
+}
+
+.store-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* تنسيق العنوان والخط المتعرج */
+.store-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.store-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    color: #1a1a1a;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.wavy-divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* شبكة الكاردات */
+.store-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.store-card {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease;
+}
+
+.store-card:hover {
+    transform: translateY(-5px);
+}
+
+/* خلفية الصورة لكل كارد */
+.card-image {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px;
+}
+
+/* تظليل خفيف فوق الصورة ليظهر الكلام بوضوح */
+.card-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.4) 100%);
+    z-index: 1;
+}
+
+/* البادج الأبيض في منتصف الجزء العلوي للصورة */
+.card-badge {
+    position: relative;
+    z-index: 2;
+    background-color: #ffffff;
+    color: #2c7a7b;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 8px 18px;
+    border-radius: 4px;
+    align-self: center;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* أسفل الكارد (عدد المنتجات وكلمة Shop Now) */
+.card-footer {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.product-count {
+    color: #ffffff;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.shop-now {
+    color: #ffffff;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: opacity 0.2s ease;
+}
+
+.shop-now:hover {
+    opacity: 0.8;
+}
+/* تنسيق التمويج العلوي المتجه لأسفل */
+.footer-wave {
+    width: 100%;
+    line-height: 0;
+    background-color: #ffffff;
+}
+
+.footer-wave svg {
+    display: block;
+    width: 100%;
+    height: 70px;
+}
+
+/* تنسيق الجزء السفلي الأبيض */
+.footer-main {
+    background-color: #ffffff;
+    padding: 20px 20px 40px 20px;
+    text-align: center;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #2c2c2c;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #0e869c;
+}
+
+.footer-copy {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 13px;
+    color: #777777;
+    margin: 0;
+}
+

@@ -1,0 +1,356 @@
+:root {
+            --bg-color: #f7f5f0;
+            --text-primary: #1e1e1e;
+            --accent-teal: #2c7a7b;
+            --accent-gold: #d69e2e;
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- 1. Navigation Bar --- */
+        .site-header {
+            width: 100%;
+            padding: 1.5rem 3rem;
+            background-color: var(--bg-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1440px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-links, .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent-teal);
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--accent-teal);
+            border-radius: 2px;
+        }
+
+        .nav-brand a {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            font-weight: 100;
+            color: var(--accent-teal);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        .nav-brand img {
+            height: 40px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-brand span {
+            color: var(--accent-gold);
+        }
+
+        .nav-icons {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-left: 1rem;
+        }
+
+        .icon-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-primary);
+            transition: transform 0.2s ease, color 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon-btn:hover {
+            color: var(--accent-teal);
+            transform: translateY(-2px);
+        }
+
+        /* --- 2. Hero Section with Video Background --- */
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: calc(100vh - 90px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-color: var(--bg-color);
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: cover;
+            z-index: 1;
+            opacity: 0.85;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-family: var(--font-serif);
+            font-size: clamp(4rem, 10vw, 8.5rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            color: #2b2b2b;
+            user-select: none;
+        }
+
+        .hero-title span {
+            font-style: italic;
+            color: #4a4a4a;
+        }
+
+        
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* زر الـ More */
+.dropdown-btn {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.dropdown-btn:hover {
+    color: var(--accent-teal);
+}
+
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 6px;
+    padding: 8px 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 110;
+}
+
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    color: #2c2c2c;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f7f5f0;
+    color: #2c7a7b;
+}
+
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.artist-header-section {
+    background-color: #0e869c; /* اللون التيفاني الخاص بالخلفية */
+    position: relative;
+    padding-top: 80px;
+}
+
+.artist-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px 80px 20px;
+    text-align: center;
+}
+
+.artist-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+/* التمويج في الأسفل */
+.artist-wave {
+    width: 100%;
+    line-height: 0;
+}
+
+.artist-wave svg {
+    display: block;
+    width: 100%;
+    height: 80px;
+}
+.about-artist-section {
+    background-color: #f7f5f0; /* نفس لون الخلفية البيج الهادئ */
+    padding: 60px 20px 100px 20px;
+}
+
+.about-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+/* تنسيق صورة الفنانة */
+.artist-image-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.artist-photo {
+    width: 100%;
+    max-width: 420px;
+    height: 450px;
+    object-fit: cover;
+    /* شكل إطار الصورة المتموج الطبيعي */
+    border-radius: 50% 40% 50% 40% / 40% 50% 40% 50%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* تنسيق النصوص */
+.artist-text-content {
+    flex: 1.2;
+}
+
+.artist-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    color: #2c7a7b;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.artist-bio {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #4a4a4a;
+    margin-bottom: 20px;
+}
+
+.site-footer {
+    background-color: #ffffff;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* تنسيق التمويج العلوي المتجه لأسفل */
+.footer-wave {
+    width: 100%;
+    line-height: 0;
+    background-color: #ffffff;
+}
+
+.footer-wave svg {
+    display: block;
+    width: 100%;
+    height: 70px;
+}
+
+/* تنسيق الجزء السفلي الأبيض */
+.footer-main {
+    background-color: #ffffff;
+    padding: 20px 20px 40px 20px;
+    text-align: center;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #2c2c2c;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #0e869c;
+}
+
+.footer-copy {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 13px;
+    color: #777777;
+    margin: 0;
+}
+
